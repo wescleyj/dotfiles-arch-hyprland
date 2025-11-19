@@ -27,16 +27,16 @@ This repository contains my personal configurations, automation scripts, and pac
 Here's a look at some of my setups. Each screenshot features a specific wallpaper and a theme designed to complement it.
 
 ### Dark Red Theme
-![Dark Red Theme](.screenshots/dark-red-desktop)
+![Dark Red Theme](.screenshots/dark-red-desktop.png)
 
 ### Dark Blue Theme
-![Dark Blue Theme](.screenshots/dark-blue-desktop)
+![Dark Blue Theme](.screenshots/dark-blue-desktop.png)
 
 ### Nature Green Theme
-![Nature Green Theme](.screenshots/nature-green-desktop)
+![Nature Green Theme](.screenshots/nature-green-desktop.png)
 
 ### Abstract Light Theme
-![Abstract Light Theme](.screenshots/abstract-light-desktop)
+![Abstract Light Theme](.screenshots/abstract-light-desktop.png)
 
 ## 📂 File Structure
 
