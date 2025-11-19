@@ -4,6 +4,7 @@
 THEME="$1"
 DOTFILES_DIR="$HOME/dotfiles"
 WALLPAPER_DIR="$DOTFILES_DIR/wallpapers"
+HYPR_CONF_DIR="$HOME/.config/hypr"
 
 # Validação
 if [ -z "$THEME" ]; then
@@ -14,7 +15,7 @@ fi
 
 echo "Swapping to theme: $THEME"
 
-# 1. Wallpaper (Suporte a PNG e JPG)
+# 1. Identificar Wallpaper (PNG ou JPG)
 WALLPAPER=""
 if [ -f "$WALLPAPER_DIR/$THEME.png" ]; then
     WALLPAPER="$WALLPAPER_DIR/$THEME.png"
@@ -24,11 +25,18 @@ fi
 
 if [ -n "$WALLPAPER" ]; then
     echo "Setting wallpaper: $WALLPAPER"
-    # Pré-carrega e define o novo wallpaper
+    
+    # A: Aplica imediatamente (Runtime)
     hyprctl hyprpaper preload "$WALLPAPER"
     hyprctl hyprpaper wallpaper ",$WALLPAPER"
+    
+    # B: Garante persistência no reboot (Config file)
+    # Sobrescreve o hyprpaper.conf para carregar este wallpaper na próxima vez
+    echo "preload = $WALLPAPER" > "$HYPR_CONF_DIR/hyprpaper.conf"
+    echo "wallpaper = , $WALLPAPER" >> "$HYPR_CONF_DIR/hyprpaper.conf"
+    echo "ipc = on" >> "$HYPR_CONF_DIR/hyprpaper.conf"
 else
-    echo "Warning: Wallpaper not found for $THEME (checked .png and .jpg in $WALLPAPER_DIR)."
+    echo "Warning: Wallpaper not found for $THEME."
 fi
 
 # 2. Waybar
@@ -37,6 +45,7 @@ pkill waybar && waybar &
 
 # 3. Kitty
 ln -sf "$DOTFILES_DIR/config/kitty/themes/$THEME.conf" "$HOME/.config/kitty/theme.conf"
+# Recarrega instâncias do Kitty
 killall -SIGUSR1 kitty 2>/dev/null
 
 # 4. Rofi
