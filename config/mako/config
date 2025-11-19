@@ -1,0 +1,30 @@
+# --- CONFIGURAÇÕES GLOBAIS ---
+font=Noto Sans 10
+
+background-color=#1d1c1dF0
+text-color=#c5c5c5FF
+border-color=#404040FF
+
+border-size=2
+border-radius=5
+padding=10
+margin=10
+
+width=350
+anchor=top-right
+
+default-timeout=5000
+max-visible=3
+sort=+time
+ignore-timeout=0
+
+on-button-left=dismiss
+on-button-right=dismiss-all
+
+# --- ESTILOS ESPECÍFICOS ---
+[urgency=high]
+border-color=#f02a65FF
+default-timeout=0
+
+[urgency=low]
+text-color=#70755fFF

@@ -1,0 +1,117 @@
+/* ~/.config/waybar/style.css */
+
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+	font-size: 14px;
+	min-height: 0;
+}
+
+window#waybar {
+	/* Fundo (preto/cinza da imagem) com sua transparência original */
+	background-color: rgba(29, 28, 29, 0.85);
+	/* Texto principal (cor do crânio) */
+	color: #c5c5c5;
+	transition-property: background-color;
+	transition-duration: .5s;
+}
+
+#workspaces button {
+	padding: 0 10px;
+	background-color: transparent;
+	/* Cor dos workspaces inativos (cinza escuro da mochila/laptop) */
+	color: #404040;
+}
+
+#workspaces button:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+	/* Fundo do workspace ativo (rosa dos óculos) */
+	background-color: #f02a65;
+	/* Texto do workspace ativo (cor de fundo, para alto contraste) */
+	color: #1d1c1d;
+}
+
+#workspaces button.urgent {
+	/* Cor de urgência (vermelho escuro do fundo) */
+	background-color: #7a1d33;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#backlight,
+#tray {
+	padding: 0 10px;
+	/* Cor padrão dos módulos (cor do crânio) */
+	color: #c5c5c5;
+}
+#clock {
+	font-weight: bold;
+}
+
+#battery.charging, #battery.plugged {
+	/* Cor da bateria carregando (verde-oliva do capuz) */
+	color: #70755f;
+}
+
+#battery.critical:not(.charging) {
+	/* Fundo da bateria crítica (rosa dos óculos) */
+	background-color: #f02a65;
+	/* Texto da bateria crítica (cor de fundo) */
+	color: #1d1c1d;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes blink {
+	to {
+		/* Pisca para o vermelho escuro, com texto claro */
+		background-color: #7a1d33;
+		color: #c5c5c5;
+	}
+}
+
+#backlight {
+	color: #c5c5c5; /* Ou use #f02a65 se quiser destaque rosa */
+}
+
+#network {
+	/* Verde-oliva do capuz */
+	color: #70755f;
+}
+
+#pulseaudio {
+	/* Verde-oliva do capuz */
+	color: #70755f;
+}
+
+#power-profiles-daemon {
+	padding: 0 10px;
+	font-weight: bold;
+}
+
+/* Quando o perfil for "performance" */
+#power-profiles-daemon.performance {
+	background-color: #f02a65; /* Rosa */
+	color: #1d1c1d;
+}
+
+/* Quando o perfil for "balanced" */
+#power-profiles-daemon.balanced {
+	background-color: #70755f; /* Verde-oliva */
+	color: #1d1c1d;
+}
+
+/* Quando o perfil for "power-saver" */
+#power-profiles-daemon.power-saver {
+	background-color: #404040; /* Cinza escuro (laptop/mochila) */
+	color: #c5c5c5;
+}
