@@ -1,0 +1,7 @@
+@import "style-dark-red.css";
+
+window#waybar { background-color: rgba(240, 240, 240, 0.85); color: #333333; }
+#workspaces button { color: #666666; }
+#workspaces button.focused { background-color: #333333; color: #ffffff; }
+#battery.charging, #network, #pulseaudio { color: #005577; }
+#power-profiles-daemon.performance { background-color: #333333; color: #ffffff; }

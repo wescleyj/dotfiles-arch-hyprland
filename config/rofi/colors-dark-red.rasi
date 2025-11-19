@@ -1,0 +1,9 @@
+/* colors-dark-red.rasi */
+* {
+    bg-col:  rgba(29, 28, 29, 0.85);
+    bg-col-light: #404040;
+    border-col: #f02a65;
+    selected-col: #f02a65;
+    fg-col: #c5c5c5;
+    fg-col2: #1d1c1d;
+}

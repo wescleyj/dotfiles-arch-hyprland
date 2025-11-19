@@ -1,0 +1,8 @@
+* {
+    bg-col:  rgba(40, 40, 40, 0.9);
+    bg-col-light: #504945;
+    border-col: #98971a;
+    selected-col: #98971a;
+    fg-col: #ebdbb2;
+    fg-col2: #282828;
+}

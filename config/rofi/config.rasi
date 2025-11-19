@@ -7,21 +7,7 @@ configuration {
     font: "JetBrainsMono Nerd Font 12";
 }
 
-/* Definição das cores baseadas no seu Wofi anterior */
-* {
-    bg-col:  rgba(29, 28, 29, 0.85);   /* Fundo principal */
-    bg-col-light: #404040;             /* Fundo do input */
-    border-col: #f02a65;               /* Borda Rosa */
-    selected-col: #f02a65;             /* Seleção Rosa */
-    fg-col: #c5c5c5;                   /* Texto Cinza */
-    fg-col2: #1d1c1d;                  /* Texto Escuro (para contraste na seleção) */
-    
-    background-color: transparent;
-    text-color: @fg-col;
-    margin: 0px;
-    padding: 0px;
-    spacing: 0px;
-}
+@theme "colors"
 
 window {
     location: center;

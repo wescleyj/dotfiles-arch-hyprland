@@ -1,0 +1,8 @@
+@import "style-dark-red.css"; /* Herda a base, sobrescreve cores */
+
+window#waybar { background-color: rgba(15, 20, 25, 0.9); color: #a0e0ff; }
+#workspaces button.focused { background-color: #00bfff; color: #0f1419; }
+#workspaces button.urgent { background-color: #005f87; }
+#battery.charging, #network, #pulseaudio { color: #00bfff; }
+#battery.critical:not(.charging) { background-color: #00bfff; color: #0f1419; }
+#power-profiles-daemon.performance { background-color: #00bfff; color: #0f1419; }
