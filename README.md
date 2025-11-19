@@ -47,24 +47,40 @@ Here's a look at some of my setups. Each screenshot features a specific wallpape
 * `wallpapers/`: Collection of desktop backgrounds.
 * `.screenshots/`: Screenshots of my setup.
 
-## 🚀 Installation / Restoration
+## 🚀 Instalação / Restauração
 
-1.  **Clone the repository:**
+1.  **Clonar o repositório:**
     ```bash
     git clone https://github.com/wescleyj/dotfiles-arch-hyprland.git ~/dotfiles
+    cd ~/dotfiles
     ```
 
-2.  **Install packages:**
+2.  **Instalar pacotes:**
     ```bash
     yay -S --needed - < packages/pkglist.txt
     ```
 
-3.  **Link configurations (Stow or Manual):**
+3.  **Aplicar Configurações (Links Simbólicos):**
+    Execute o script de instalação para criar os links simbólicos automaticamente. Ele fará backup de configurações existentes se necessário.
     ```bash
-    # Manual example
-    cp -r ~/dotfiles/config/* ~/.config/
+    chmod +x install.sh
+    ./install.sh
     ```
 
+4.  **🎨 Trocar Temas:**
+    Utilize o script de temas para alternar instantaneamente entre papéis de parede e esquemas de cores (Waybar, Rofi, Kitty).
+
+    ```bash
+    chmod +x scripts/switch_theme.sh
+    ./scripts/switch_theme.sh [nome-do-tema]
+    ```
+
+    **Temas disponíveis:**
+    * `dark-red` (Padrão)
+    * `dark-blue`
+    * `nature-green`
+    * `abstract-light`
+    
 ## ⚡ Applied Optimizations
 
 * **ZRAM:** Configuration via `zram-generator`.
