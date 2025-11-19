@@ -1,7 +1,49 @@
 @import "style-dark-red.css";
 
-window#waybar { background-color: rgba(240, 240, 240, 0.85); color: #333333; }
-#workspaces button { color: #666666; }
-#workspaces button.focused { background-color: #333333; color: #ffffff; }
-#battery.charging, #network, #pulseaudio { color: #005577; }
-#power-profiles-daemon.performance { background-color: #333333; color: #ffffff; }
+/* Configuração da Barra (Fundo Claro) */
+window#waybar {
+    background-color: rgba(240, 240, 240, 0.85);
+    color: #333333;
+}
+
+/* --- FORÇAR COR ESCURA NOS MÓDULOS --- */
+/* Isso sobrescreve a cor clara (#c5c5c5) herdada do style-dark-red.css */
+#clock,
+#battery,
+#backlight,
+#network,
+#pulseaudio,
+#tray,
+#power-profiles-daemon {
+    color: #333333;
+}
+
+/* --- ESTILOS ESPECÍFICOS DO TEMA --- */
+
+#workspaces button {
+    color: #666666;
+}
+
+#workspaces button.focused {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Estados específicos (Carregando, etc) */
+#battery.charging {
+    color: #005577;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #ff5555; /* Vermelho claro para alerta */
+    color: #ffffff;
+}
+
+#network, #pulseaudio {
+    color: #005577; /* Azul escuro para destaque, ou use #333333 se preferir neutro */
+}
+
+#power-profiles-daemon.performance {
+    background-color: #333333;
+    color: #ffffff;
+}

@@ -7,14 +7,24 @@ configuration {
     font: "JetBrainsMono Nerd Font 12";
 }
 
+/* Importa as cores do tema selecionado (via script) */
 @theme "colors"
+
+* {
+    /* Reseta atributos para evitar conflitos */
+    background-color: transparent;
+    text-color: @fg-col;
+    margin: 0px;
+    padding: 0px;
+    spacing: 0px;
+}
 
 window {
     location: center;
     anchor: center;
-    width: 23%;        /* Um pouco mais largo para caber nomes longos */
+    width: 23%;
     height: 50%;
-    border: 2px;       /* Borda rosa */
+    border: 2px;
     border-color: @border-col;
     border-radius: 10px;
     background-color: @bg-col;
@@ -65,18 +75,21 @@ element {
     spacing: 15px;
 }
 
+/* --- AQUI ESTÁ A CORREÇÃO --- */
 element-icon {
     size: 32px;
     cursor: inherit;
+    background-color: transparent; /* Força transparência no ícone */
 }
 
 element-text {
     vertical-align: 0.5;
     cursor: inherit;
     text-color: inherit;
+    background-color: transparent; /* Força transparência no texto */
 }
+/* --------------------------- */
 
-/* Comportamento ao selecionar (fundo rosa, texto preto) */
 element selected {
     background-color: @selected-col;
     text-color: @fg-col2;
